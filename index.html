@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyan Sharma - Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library for Animations -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ff6f61, #ffab40);
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+        /* Navigation Bar */
+        #navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        #navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        #navbar .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        #navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        #navbar .nav-links li {
+            margin: 0 15px;
+        }
+        #navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        #navbar .nav-links a:hover {
+            color: #ffab40;
+        }
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        #hero h1 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
+        #hero p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #ffab40;
+        }
+        /* About Section */
+        #about {
+            padding: 50px 20px;
+            background-color: #1f1f1f;
+            text-align: center;
+        }
+        #about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        #about p {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* Skills Section */
+        #skills {
+            padding: 50px 20px;
+            background-color: #292929;
+        }
+        #skills h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .skill {
+            text-align: center;
+            max-width: 250px;
+        }
+        .skill i {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #ffab40;
+        }
+        /* Projects Section */
+        #projects {
+            padding: 50px 20px;
+            background-color: #1f1f1f;
+        }
+        #projects h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .project-card {
+            background-color: #292929;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .project-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .project-card p {
+            color: #ccc;
+        }
+        /* Contact Section */
+        #contact {
+            padding: 50px 20px;
+            background-color: #292929;
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        .contact-info p {
+            font-size: 18px;
+        }
+        /* Footer */
+        footer {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer .social-links a {
+            margin: 0 10px;
+            color: white;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        footer .social-links a:hover {
+            color: #ffab40;
+        }
+        footer p {
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #navbar .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+            .skills-container, .projects-container {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#hero">Shreyan Sharma</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container" data-aos="zoom-in">
+            <h1>Hi, I'm Shreyan Sharma</h1>
+            <p>Aspiring AI & Machine Learning Engineer</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+        <div class="container" data-aos="fade-up">
+            <h2>About Me</h2>
+            <p>I am a third-year Artificial Intelligence and Machine Learning student with strong experience in data science, programming, and problem-solving. I am passionate about leveraging technology to solve real-world problems and contribute to innovative projects. My journey in coding started early, and I have continuously honed my skills through various projects and competitive programming platforms.</p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container" data-aos="fade-up">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <i class="fas fa-code"></i>
+                    <h3>Programming Languages</h3>
+                    <p>C++, Python, SQL, HTML, CSS</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Frameworks & Tools</h3>
+                    <p>Flask, Power BI, pandas, numpy, Microsoft Excel</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Problem Solving</h3>
+                    <p>Data Structures, Algorithms, Greedy Algorithms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container" data-aos="fade-up">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>WhatsApp Chat Analyzer</h3>
+                    <p>A project to analyze WhatsApp chat data, providing insights into message frequency, active times, and user interactions.</p>
+                </div>
+                <div class="project-card">
+                    <h3>AI-Based Chatbot</h3>
+                    <p>An intelligent chatbot that uses NLP to interact with users and answer queries based on a predefined knowledge base.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Machine Learning Model</h3>
+                    <p>A predictive model built using machine learning techniques to forecast sales based on historical data.</p>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container" data-aos="fade-up">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:sharmashreyan04@gmail.com">sharmashreyan04@gmail.com</a></p>
+                <p>Phone: <a href="tel:+918755907658">+91 8755907658</a></p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/shreyan-sharma-924718247/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/SHREYDEVLOPER" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://leetcode.com/u/HUSTLER2004/" target="_blank"><i class="fab fa-leetcode"></i></a>
+                <a href="https://www.geeksforgeeks.org/user/sharmashreyan04/" target="_blank"><i class="fab fa-geeks"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Shreyan Sharma. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
